@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+:root {
+  --mainColor: #402a70;
+  --secondaryColor: #b19be0;
+}
+
+* {
+  background-color: var(--mainColor);
+  color: var(--secondaryColor)
+}
