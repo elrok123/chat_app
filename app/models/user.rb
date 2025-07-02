@@ -6,4 +6,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :email, :username, presence: true
+  validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
 end
