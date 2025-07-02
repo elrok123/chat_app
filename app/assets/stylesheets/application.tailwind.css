@@ -9,3 +9,8 @@
   background-color: var(--mainColor);
   color: var(--secondaryColor)
 }
+
+.messagesContainer {
+  display: flex;
+	flex-direction: column-reverse;
+}

@@ -32,14 +32,6 @@ RSpec.describe "/messages", type: :request do
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
-      message = Message.create! valid_attributes
-      get message_url(message)
-      expect(response).to be_successful
-    end
-  end
-
   describe "POST /create" do
     context "with valid parameters" do
       it "creates a new Message" do

@@ -1,1 +1,11 @@
-<p> Welcome to the home page of the Chat System</p>
+<%= turbo_stream_from dom_id(current_user) %>
+<div class="flex flex-col h-full bg-secondaryBgColor">
+  <div class="flex flex-col h-full text-white">
+    <h1 class="text-3xl font-bold text-center">Chatroom</h1>
+    <p class="text-center">Welcome <%= current_user.username %>!</p>
+  </div>
+  <div id="chatbox" class="flex flex-col-reverse overflow-y-auto p-3 space-y-reverse">
+    <%= render partial: "messages/chatbox", locals: { messages: @messages } %>
+  </div>
+  <%= render partial: "messages/form", locals: { new_message: @new_message } %>
+</div>
