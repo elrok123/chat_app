@@ -3,6 +3,6 @@ class HomeController < ApplicationController
 
   def index
     @messages = Message.all
-    @new_message = Message.new
+    @new_message = current_user.messages.build
   end
 end
