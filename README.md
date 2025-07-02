@@ -29,3 +29,14 @@ Simply run:
 ```
   bundle exec rspec
 ```
+
+## Testing the mailer
+1. Open the rails console
+```
+  rails console
+```
+
+2. Run the following (changet the 'User.first' to whichever user you like to test) and you should see the body of the email:
+```
+  $ UserMailer.weekly_email(User.first).body.raw_source
+```
