@@ -1,4 +1,10 @@
-<%= form_with(model: new_message) do |form| %>
+<%= form_with(model: new_message,
+              id: "message_form",
+              method: :post,
+              data: {
+                  controller: "reset-chat",
+                  action: "turbo:submit-end->reset-chat#clearInput"
+              }) do |form| %>
   <% if new_message.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(new_message.errors.count, "error") %> prohibited this new_message from being saved:</h2>
@@ -13,7 +19,12 @@
 
   <div>
     <%= form.label :body, style: "display: block" %>
-    <%= form.textarea :body, placeholder: "Enter message to be broadcasted to other users..." %>
+    <%= form.textarea :body,
+                      id: "chat-input",
+                      data: {
+                        reset_chat_target: "input"
+                      },
+                      placeholder: "Enter message to be broadcasted to other users..." %>
   </div>
 
   <div >
