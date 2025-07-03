@@ -10,7 +10,7 @@ class Message < ApplicationRecord
     # Broadcast to all users the message partial
     broadcast_append_to "messages",
       partial: "messages/message",
-      locals: { message: self, display_controls: false }
+      locals: { message: self, is_current_user_message: false }
 
     # Broadcast the user controls to: message_id_user_id_controls
     broadcast_replace_to "user_#{self.user.id}",

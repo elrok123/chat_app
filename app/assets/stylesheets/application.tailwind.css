@@ -2,9 +2,13 @@
 :root {
   --mainColor: #402a70;
   --secondaryColor: #b19be0;
+  --headingColor: #85c79a;
+  --borderColor: #7dad8c;
+  --darkTextColor: #354a3b;
+  --lightTextColor: #83d6d6;
 }
 
-* {
+body {
   background-color: var(--mainColor);
   color: var(--secondaryColor)
 }
@@ -14,14 +18,38 @@
 	flex-direction: column-reverse;
 }
 
+.message {
+  border: 2px solid var(--borderColor);
+  background-color: var(--secondaryColor);
+  color: var(--darkTextColor);
+}
+
+.current_user_message {
+  background-color: var(--headingColor);
+  color: var(--mainColor);
+}
+
+.heading {
+  margin: 5px;
+  color: var(--headingColor);
+}
+
+.actions {
+  padding: 5px;
+  background: var(--secondaryColor);
+  border: 1px solid var(--borderColor);
+  color: var(--mainColor);
+  border-radius: 4px;
+  margin: 5px;
+}
+
 textarea {
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
-}
-
-input, textarea {
-  margin: 5px;
-  background: #fff;
-  border-color: var(--secondaryColor);
+  width: 100%;
+  resize: none;
+  background: var(--headingColor);
+  border-radius: 4px;
+  padding: 5px;
+  color: var(--mainColor);
 }

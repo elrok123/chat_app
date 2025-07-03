@@ -13,10 +13,10 @@
 
   <div>
     <%= form.label :body, style: "display: block" %>
-    <%= form.textarea :body %>
+    <%= form.textarea :body, placeholder: "Enter message to be broadcasted to other users..." %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div >
+    <%= form.submit class: "actions" %>
   </div>
 <% end %>
